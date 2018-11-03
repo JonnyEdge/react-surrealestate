@@ -1,0 +1,22 @@
+.navbar {
+  text-align: center;
+  background: white;
+  border-bottom-style: solid;
+  border-color: grey;
+}
+
+.nav {
+  margin: 0px;
+  padding: 0px;
+}
+
+.item {
+  margin: 0px;
+  padding: 10px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: lightgrey;
+}
