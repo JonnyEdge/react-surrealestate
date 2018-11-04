@@ -1,6 +1,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import '../styles/addproperty.scss';
+import Axios from 'axios';
 
 class AddProperty extends React.Component {
   constructor(props) {
@@ -19,8 +20,18 @@ class AddProperty extends React.Component {
   }
 
   handleAddProperty = (event) => {
+    Axios.post('http://localhost:3000/api/v1/PropertyListing', {
+      title: this.state.fields.title,
+      type: this.state.fields.type,
+      bedrooms: this.state.fields.bedrooms,
+      bathrooms: this.state.fields.bathrooms,
+      price: this.state.fields.price,
+      city: this.state.fields.city,
+      email: this.state.fields.email,
+    });
+
     event.preventDefault();
-    console.log(this.state.fields);
+    // console.log(this.state.fields);
   };
 
   handleFieldChange = (event) => {
