@@ -1,7 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import '../styles/addproperty.scss';
-import Axios from 'axios';
 
 class AddProperty extends React.Component {
   constructor(props) {
@@ -35,7 +34,7 @@ class AddProperty extends React.Component {
   render() {
     return (
       <div className="addproperty">
-        <form onSubmit={this.handleAddProperty}>
+        <form>
           <input name="title" placeholder="Advert Tagline" value={this.state.fields.title} onChange={this.handleFieldChange} />
           <select name="type" value={this.state.fields.type} onChange={this.handleFieldChange}>
             <option value="" hidden>Property Type</option>
@@ -59,7 +58,7 @@ class AddProperty extends React.Component {
           </select>
           <input name="email" placeholder="Email" value={this.state.fields.email} onChange={this.handleFieldChange} />
         </form>
-        <button type="submit">Add</button>
+        <button onClick={this.handleAddProperty} type="submit">Add</button>
       </div>
     );
   }
