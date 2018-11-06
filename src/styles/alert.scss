@@ -1,0 +1,13 @@
+.Alert {
+  border: 1px solid red;
+  background-color: #ffcccc;
+  color: red;
+  padding: 10px;
+}
+
+.Alert.success {
+  border: 1px solid green;
+  background-color: #ccffcc;
+  color: green;
+  padding: 10px;
+}

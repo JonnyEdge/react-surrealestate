@@ -2,6 +2,7 @@
 import React from 'react';
 import '../styles/addproperty.scss';
 import Axios from 'axios';
+import Alert from '../components/alert';
 
 class AddProperty extends React.Component {
   constructor(props) {
@@ -16,10 +17,18 @@ class AddProperty extends React.Component {
         city: '',
         email: '',
       },
+      alertMessage: '',
+      isSuccess: false,
+      isError: false,
     };
   }
 
   handleAddProperty = (event) => {
+    this.setState({
+      alertMessage: '',
+      isSuccess: false,
+      isError: false,
+    });
     Axios.post('http://localhost:3000/api/v1/PropertyListing', {
       title: this.state.fields.title,
       type: this.state.fields.type,
@@ -28,7 +37,15 @@ class AddProperty extends React.Component {
       price: this.state.fields.price,
       city: this.state.fields.city,
       email: this.state.fields.email,
-    });
+    })
+      .then(() => this.setState({
+        isSuccess: true,
+        alertMessage: 'Property added successfully.',
+      }))
+      .catch(() => this.setState({
+        isError: true,
+        alertMessage: 'Server error. Please try again later.',
+      }));
 
     event.preventDefault();
     // console.log(this.state.fields);
@@ -46,6 +63,8 @@ class AddProperty extends React.Component {
     return (
       <div className="addproperty">
         <form>
+          {this.state.isSuccess && <Alert message={this.state.alertMessage} />}
+          {this.state.isError && <Alert message={this.state.alertMessage} />}
           <input name="title" placeholder="Advert Tagline" value={this.state.fields.title} onChange={this.handleFieldChange} />
           <select name="type" value={this.state.fields.type} onChange={this.handleFieldChange}>
             <option value="" hidden>Property Type</option>
