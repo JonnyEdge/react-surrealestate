@@ -63,7 +63,7 @@ class AddProperty extends React.Component {
     return (
       <div className="addproperty">
         <form>
-          {this.state.isSuccess && <Alert message={this.state.alertMessage} />}
+          {this.state.isSuccess && <Alert message={this.state.alertMessage} success />}
           {this.state.isError && <Alert message={this.state.alertMessage} />}
           <input name="title" placeholder="Advert Tagline" value={this.state.fields.title} onChange={this.handleFieldChange} />
           <select name="type" value={this.state.fields.type} onChange={this.handleFieldChange}>
