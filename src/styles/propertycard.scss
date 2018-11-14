@@ -1,0 +1,22 @@
+.property-card {
+  background-color: white;
+  padding: 10px;
+  margin: 5px;
+}
+
+.property-card__placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 50px;
+  background-color: lightgrey;
+}
+
+.property-card__title {
+  font-weight: bold;
+}
+
+.property-card__type {
+  font-style: italic;
+}

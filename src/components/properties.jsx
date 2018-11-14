@@ -5,7 +5,7 @@ class Properties extends React.Component {
   render() {
     return (
       <React.Fragment>
-        Properties Page
+        {/* Properties Page */}
       </React.Fragment>
     );
   }
