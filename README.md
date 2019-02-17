@@ -2,11 +2,12 @@
 
 React real estate app. Renders property cards, lets a user filter by city and add new properties. Should only be used in conjunction with the API, which only exists locally for now.
 
-## Technologies Used
+## Features of Interest
 
-* React
-* JSX
-* Enzyme
+* Single page application
+* Client-side routing
+* HTTP requests and API interaction
+* OAuth
 
 ## Getting Started
 
