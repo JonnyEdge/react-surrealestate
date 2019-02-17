@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/propertycard.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const PropertyCard = props => console.log(props) || (
+const PropertyCard = props => (
 
   <span className="property-card">
     <div className="property-card__placeholder"><FontAwesomeIcon icon="home" /></div>

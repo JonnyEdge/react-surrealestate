@@ -30,6 +30,19 @@ class App extends React.Component {
       });
   }
 
+  componentDidUpdate(prevProps) {
+    // console.log(this.props)
+    // console.log(this.props.location)
+    // console.log(this.props.location.search)
+    // console.log(this.state.properties)
+    const { search } = this.props.location;
+
+    if (prevProps.location.search !== search) {
+      Axios.get(`http://localhost:3000/api/v1/PropertyListing${search}`)
+        .then(({ data: properties }) => this.setState({ properties }))
+        .catch(err => console.error(err));
+    }
+  }
 
   render() {
     return (
